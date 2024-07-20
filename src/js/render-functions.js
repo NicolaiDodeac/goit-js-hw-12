@@ -17,7 +17,7 @@ function createPhotoCard({
   return `
     <li class="photo-card">
       <a class="gallery-link" href="${largeImageURL}">
-        <img
+        <img class="image"
           src="${webformatURL}"
           alt="${tags}"
           loading="lazy"
@@ -25,10 +25,10 @@ function createPhotoCard({
       </a>
       <div class="wrapper">
         <div class="info">
-          <b class="student-info">Likes: ${likes}</b>
-          <b class="student-info">Views: ${views}</b>
-          <b class="student-info">Comments: ${comments}</b>
-          <b class="student-info">Downloads: ${downloads}</b>
+          <b class="student-info"><span class="atribute">Likes:</span> ${likes}</b>
+          <b class="student-info"><span class="atribute">Views:</span> ${views}</b>
+          <b class="student-info"><span class="atribute">Comments:</span> ${comments}</b>
+          <b class="student-info"><span class="atribute">Downloads:</span> ${downloads}</b>
         </div>
       </div>
     </li>
