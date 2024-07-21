@@ -15,24 +15,24 @@ const refs = {
 
 refs.searchFormRef.addEventListener('submit', searchRequest);
 
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+});
+
 function searchRequest(e) {
   e.preventDefault();
-
+  refs.galleryEl.innerHTML = '';
+  refs.loader.style.display = 'block';
   const searchInput = e.target.elements.search.value.trim();
   if (searchInput === '') {
     return;
   }
-
-  refs.loader.style.display = 'block';
 
   fetchImages(searchInput)
     .then(data => {
       if (data.hits.length > 0) {
         renderPhotoCards(data.hits, refs.galleryEl);
         refs.searchFormRef.reset();
-        let gallery = new SimpleLightbox('.gallery a', {
-          captionsData: 'alt',
-        });
         gallery.refresh();
       } else {
         iziToast.error({
