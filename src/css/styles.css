@@ -246,3 +246,27 @@ display: block;
   }
 }
 
+/* Load more button styles */
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4E75FF;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.load-more:hover {
+  background-color: #6C8CFF;
+  transform: scale(1.05);
+}
+
+.load-more:active {
+  background-color: #3A5DC9;
+}
